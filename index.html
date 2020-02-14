@@ -3,48 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title>Display Webcam Stream</title>
- 
-<style>
-#container {
-    margin: 0px auto;
-    width: 500px;
-    height: 375px;
-    border: 10px #333 solid;
-}
-#videoElement {
-    width: 500px;
-    height: 375px;
-    background-color: #666;
-}
-</style>
+
 </head>
  
 <body>
-    <h1>Camera Permission Status</h1>
-<div id="container">
-    <video autoplay="true" id="videoElement">
-    
-    </video>
-</div>
-<script>
- 
-addEventListener("click",function(){navigator.permissions.query({name: 'camera'})
- .then((permissionObj) => {
-     document.querySelector("h1").innerHTML =permissionObj.state;
-  console.log(permissionObj.state);
- })})
- 
-var video = document.querySelector("#videoElement");
- 
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
-    });
-}
-</script>
+    <iframe src="https://www.redstraton.com/cam" allow="camera" width="800" height="800"></iframe>
+
 </body>
 </html>
